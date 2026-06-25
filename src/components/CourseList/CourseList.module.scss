@@ -1,0 +1,336 @@
+@use '../../styles/variables' as *;
+
+.section {
+  position: relative;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.sectionHeader {
+  text-align: center;
+
+  margin: 0 auto $spacing-3xl;
+
+  background-color: $color-primary;
+  color: #090C0F;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 60px;
+  border-radius: 16px;
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: calc(100% - 32px);
+    padding: 24px 20px;
+  }
+}
+
+.sectionSpanner {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.sectionTag {
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: $spacing-md;
+  letter-spacing: 0.02em;
+}
+
+.sectionTitle {
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  margin-bottom: $spacing-md;
+  line-height: 1.3;
+}
+
+
+.sectionDescription {
+  font-size: $font-size-base;
+  color: $color-white;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-lg;
+  margin: 0 auto $spacing-2xl;
+  max-width: 900px;
+}
+
+.card {
+  display: flex;
+  background-color: $color-bg-card;
+  border: 1px solid $color-border;
+  padding: $spacing-xl;
+  gap: $spacing-lg;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($color-primary, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba($color-primary, 0.08);
+  }
+}
+
+.cardImage {
+  position: relative;
+  flex: 0 0 45%;
+  aspect-ratio: 16 / 10;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+
+    .card:hover & {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.cardBody {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: $font-weight-semibold;
+  color: $color-white;
+  margin-bottom: $spacing-sm;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardFeatures {
+  margin-bottom: $spacing-md;
+  flex: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1px solid rgba($color-border, 0.5);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: $font-size-sm;
+  color: $color-primary;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: $spacing-sm;
+}
+
+.priceGroup {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.price {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.originalPrice {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  text-decoration: line-through;
+}
+
+.enrollBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: $color-primary;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-fast;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba($color-primary, 0.3);
+  }
+}
+
+.viewAll {
+  text-align: center;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $color-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  padding: 12px 28px;
+  border: 1px solid rgba($color-primary, 0.3);
+  border-radius: $radius-md;
+  background: transparent;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba($color-primary, 0.08);
+    border-color: $color-primary;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .courseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    padding: 0 $spacing-md;
+  }
+
+  .sectionHeader {
+    margin-bottom: $spacing-xl;
+  }
+
+  .sectionTitle {
+    font-size: $font-size-xl;
+  }
+
+  .sectionDescription {
+    font-size: $font-size-sm;
+  }
+
+  .courseGrid {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+
+  .card {
+
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 12px;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .cardImage {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+  }
+
+  .cardBody {
+    padding: 0;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .priceGroup {
+    margin-bottom: 12px;
+  }
+
+  .featureIcon {
+    display: none;
+  }
+
+  .featureItem {
+    font-size: 14px;
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 8px;
+    color: #a0aab2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 4px;
+      height: 4px;
+      background-color: #a0aab2;
+      border-radius: 50%;
+    }
+  }
+
+  .cardFooter {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .enrollBtn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

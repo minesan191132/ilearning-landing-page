@@ -1,0 +1,105 @@
+@use 'variables' as *;
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../assests/font/SF-Pro-Display-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-bg-dark;
+  color: $color-white;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition-fast;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: $font-primary;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: $font-primary;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $container-padding;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-border;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $color-text-muted;
+  }
+}
+
+::selection {
+  background-color: rgba($color-primary, 0.3);
+  color: $color-white;
+}

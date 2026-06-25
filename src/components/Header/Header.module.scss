@@ -1,0 +1,374 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-header;
+  background-color: $color-bg-dark2;
+  transition: all $transition-normal;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background-color: $color-bg-dark;
+    border-bottom: 1px solid $color-border;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+   @media (max-width: $breakpoint-mobile) {
+      background-color: $color-bg-dark;
+    }
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2xl;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  z-index: $z-header + 1;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #0b0f13;
+  border-radius: $radius-md;
+  padding: 10px 16px;
+  width: 320px;
+  gap: $spacing-sm;
+  border: 1px solid transparent;
+  transition: border-color $transition-fast;
+
+  &:focus-within {
+    border-color: $color-primary;
+  }
+}
+
+.searchIcon {
+  color: $color-text-muted;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: $color-white;
+  font-size: 13px;
+  outline: none;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+.searchBarMobile {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2xl;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  transition: color $transition-fast;
+  padding: $spacing-sm 0;
+  position: relative;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.dropdownIcon {
+  margin-top: 2px;
+}
+
+.authGroup {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.divider {
+  color: $color-text-muted;
+  font-size: 12px;
+}
+
+.loginLink {
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.signBtn {
+  background-color: #0b0f13;
+  color: $color-text-secondary;
+  padding: 8px 24px;
+  border-radius: $radius-md;
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  border: 1px solid transparent;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: lighten(#0b0f13, 5%);
+    border-color: $color-primary;
+    color: $color-white;
+  }
+}
+
+.mobileRightActions {
+  display: none;
+  align-items: center;
+  gap: $spacing-md;
+  z-index: $z-header + 1;
+}
+
+.contactBtnMobile {
+  background-color: #1a3835;
+  color: $color-white;
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  padding: 8px 14px;
+  border-radius: $radius-sm;
+  text-decoration: none;
+  border: 1px solid rgba($color-primary, 0.2);
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: lighten(#1a3835, 5%);
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background-color: $color-primary;
+  border-radius: $radius-sm;
+  gap: 5px;
+  padding: 8px;
+  border: none;
+
+  &:hover {
+    background-color: darken($color-primary, 5%);
+  }
+}
+
+.hamburgerLine {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: $color-white;
+  border-radius: 2px;
+  transition: all $transition-normal;
+}
+
+.hamburgerActive {
+  .hamburgerLine {
+    &:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+.overlay {
+  display: none;
+}
+
+// Desktop Styles
+@media (max-width: 1024px) {
+  .searchBar {
+    width: 200px;
+  }
+  .navList {
+    gap: $spacing-md;
+  }
+  .leftSection {
+    gap: $spacing-lg;
+  }
+  .nav {
+    gap: $spacing-lg;
+  }
+}
+
+// Mobile Styles
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    height: 70px;
+    padding: 0 $spacing-md;
+  }
+
+  .leftSection {
+    .searchBar {
+      display: none;
+    }
+  }
+
+  .mobileRightActions {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+    background-color: $color-bg-dark;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 90px $spacing-xl $spacing-xl;
+    transition: right $transition-normal;
+    border-left: 1px solid $color-border;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: $z-header;
+    overflow-y: auto;
+    gap: $spacing-xl;
+
+    &.navOpen {
+      right: 0;
+    }
+  }
+
+  .searchBarMobile {
+    display: flex;
+    align-items: center;
+    background-color: #0b0f13;
+    border-radius: $radius-md;
+    padding: 12px 16px;
+    gap: $spacing-sm;
+    border: 1px solid $color-border;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navItem {
+    width: 100%;
+    border-bottom: 1px solid rgba($color-border, 0.5);
+  }
+
+  .navLink {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    font-size: $font-size-base;
+    width: 100%;
+  }
+
+  .authGroup {
+    flex-direction: column;
+    width: 100%;
+    gap: $spacing-md;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .loginLink {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: $font-size-base;
+  }
+
+  .signBtn {
+    width: 100%;
+    padding: 14px;
+    font-size: $font-size-base;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: $z-overlay;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

@@ -1,0 +1,173 @@
+@use '../../styles/variables' as *;
+
+.section {
+  position: relative;
+  background-color: transparent;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.curriculumWrapper {
+  background-color: #101214;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.accordionItem {
+  background-color: #24272a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &.accordionItemOpen {
+    border-color: #33363a;
+
+    @media (max-width: $breakpoint-mobile) {
+      white-space: pre-line;
+      line-height: 1.6;
+    }
+  }
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.accordionLeft {
+  flex: 1;
+}
+
+.accordionTitle {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+  display: block;
+}
+
+.accordionRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.accordionDuration {
+  background-color: #15cca3;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.accordionIcon {
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &.accordionContentOpen {
+    max-height: 500px;
+  }
+}
+
+.accordionBody {
+  padding: 0 24px 24px;
+}
+
+.lessonList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lessonItem {
+  display: flex;
+  align-items: flex-start;
+}
+
+.lessonText {
+  font-size: 14px;
+  color: #c9cdd1;
+  line-height: 1.5;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.enrollBtn {
+  background-color: #15cca3;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken(#15cca3, 5%);
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .curriculumWrapper {
+    padding: 24px 16px;
+  }
+
+  .accordionHeader {
+    padding: 16px;
+  }
+}

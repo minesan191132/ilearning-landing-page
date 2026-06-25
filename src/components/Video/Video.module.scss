@@ -1,0 +1,177 @@
+@use '../../styles/variables' as *;
+
+.videoWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-top: calc(50px + #{$spacing-xl});
+    }
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: $color-bg-card;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  @media (max-width: $breakpoint-mobile) {
+    content: url(../../assests/images/spiderman.png);
+  }
+}
+
+.controlBar {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 5;
+  
+  background: rgba(#36363663, 0.75);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba($color-white, 0.1);
+  border-radius: 50px;
+  padding: 1px 24px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 8px 16px;
+    gap: $spacing-md;
+  }
+}
+
+.timeLeft, .timeTotal {
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: $font-weight-medium;
+  color: rgba($color-white, 0.9);
+  white-space: nowrap;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 11px;
+  }
+}
+
+.progressArea {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 5px;
+  background-color: rgba($color-white, 0.2);
+  border-radius: 3px;
+  position: relative;
+}
+
+.progressActive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: $color-primary;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 38%;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 70%;
+  }
+}
+
+.progressNode {
+  width: 12px;
+  height: 12px;
+  background-color: $color-primary;
+  border: 2px solid $color-white;
+  border-radius: 50%;
+  position: absolute;
+  right: -6px;
+  box-shadow: 0 0 8px rgba($color-primary, 0.8);
+  transform: scale(1);
+  transition: transform $transition-fast;
+
+
+  .progressArea:hover & {
+    transform: scale(1.3);
+  }
+}
+
+.controlRight {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: $spacing-sm;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 4px;
+  }
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: rgba($color-white, 0.7);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-primary;
+    background-color: rgba($color-primary, 0.1);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 4px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.subtitleBtn {
+      display: none !important;
+    }
+    &.fullscreenBtn{
+      width: 25px;
+      height: 25px;
+      content: url(../../assests/icon/fullscreen-alt-svgrepo-com.svg);
+    }
+  }
+}
