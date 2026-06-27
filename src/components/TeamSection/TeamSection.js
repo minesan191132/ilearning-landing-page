@@ -79,9 +79,7 @@ const TeamSection = () => {
                     {testimonials.map(t => (
                         <div key={t.id} className={styles.testimonialCard}>
                             <div className={styles.quoteIcon}>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M10 8h-4c0-3.31 2.69-6 6-6v2c-2.21 0-4 1.79-4 4h2c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-4c0-2.21 1.79-4 4-4zm10 0h-4c0-3.31 2.69-6 6-6v2c-2.21 0-4 1.79-4 4h2c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-4c0-2.21 1.79-4 4-4z" fill="#3B4148" />
-                                </svg>
+                                “
                             </div>
                             <p className={styles.testimonialText}>{t.quote}</p>
                             <div className={styles.author}>
@@ -106,9 +104,7 @@ const TeamSection = () => {
                     <div className={styles.instructorImage}></div>
                     <div className={styles.instructorContent}>
                         <div className={styles.quoteIconWhite}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M10 8h-4c0-3.31 2.69-6 6-6v2c-2.21 0-4 1.79-4 4h2c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-4c0-2.21 1.79-4 4-4zm10 0h-4c0-3.31 2.69-6 6-6v2c-2.21 0-4 1.79-4 4h2c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-4c0-2.21 1.79-4 4-4z" fill="#fff" />
-                            </svg>
+                            “
                         </div>
                         <p className={styles.instructorQuote}>{activeInstructor.quote1}</p>
                         <p className={styles.instructorQuote}>{activeInstructor.quote2}</p>
@@ -118,7 +114,20 @@ const TeamSection = () => {
                         </div>
 
                         <div className={styles.carouselControls}>
-                            <div className={styles.dots}>
+                            <div className={styles.arrows}>
+                                <button className={styles.arrowBtn} onClick={handlePrev}>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+                                <button className={`${styles.arrowBtn} ${styles.arrowBtnActive}`} onClick={handleNext}>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div className={styles.dots}>
                                 {instructors.map((_, idx) => (
                                     <span
                                         key={idx}
@@ -126,19 +135,6 @@ const TeamSection = () => {
                                         onClick={() => setCurrentInstructor(idx)}
                                     ></span>
                                 ))}
-                            </div>
-                            <div className={styles.arrows}>
-                                <button className={styles.arrowBtn} onClick={handlePrev}>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
-                                <button className={`${styles.arrowBtn} ${styles.arrowBtnActive}`} onClick={handleNext}>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>

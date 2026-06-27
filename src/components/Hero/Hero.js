@@ -22,9 +22,9 @@ const Hero = () => {
                                 tổng quan để đi làm
                             </h1>
                             <p className={styles.description}>
-                                Đào tạo theo nhu cầu doanh nghiệp, học viên tham gia chương trình
+                                Đào tạo theo nhu cầu doanh nghiệp, học viên tham gia chương trình <br/>
                                 sẽ có được những giá trị khác biệt: Tiết kiệm thời gian, tiền bạc, công sức
-                                và dễ dàng tham gia và định hướng sự nghiệp.
+                                <br/>và dễ dàng tham gia và định hướng sự nghiệp.
                             </p>
                             <div className={styles.ctaGroup}>
                                 <a href="#courses" className={styles.ctaButton}>
@@ -34,7 +34,7 @@ const Hero = () => {
                         </div>
 
                         <div className={styles.pagination}>
-                            <svg width="80" height="13" viewBox="0 0 109 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="109" height="13" viewBox="0 0 109 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect opacity="0.8" width="109" height="13" rx="6.5" fill="white" />
                                 <rect width="27" height="13" rx="6.5" fill="#15CCA3" />
                             </svg>

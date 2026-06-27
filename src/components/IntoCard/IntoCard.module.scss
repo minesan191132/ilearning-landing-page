@@ -1,7 +1,7 @@
 @use '../../styles/variables' as *;
 
-.sectionContainer {
-  padding-top: 2rem;
+.sectionContainer { 
+  padding-top: 4rem;
 }
 
 .sectionHeader {
@@ -17,9 +17,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 876px;
+  height: 292px;
   padding: 40px 60px; 
-  border-radius: 16px; 
+  border-radius: 10px; 
   @media (max-width: $breakpoint-mobile) {
     max-width: calc(100% - 32px);
     padding: 24px 20px;
@@ -28,8 +29,9 @@
 
 .sectionSpanner {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   margin-top: 35px;
+  line-height: normal;
 
   &:first-child {
     margin-top: 0;
@@ -38,40 +40,48 @@
 
 .subTitle {
   display: block;
-  font-size: 14px;
+  font-size: 23px;
   color: #fff;
-  margin-bottom: 6px;
   font-weight: 400;
 }
 
 .sectionTitle {
+  font-size: 24px;
+  line-height: 150%;
   font-weight: $font-weight-bold;
   color: $color-white;
-  margin-bottom: $spacing-md;
-  line-height: 1.3;
+  padding-top: 1.5rem;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   color: #fff;
 }
 
 .sectionDescription {
-  font-size: $font-size-base;
-  color: $color-white;
-  max-width: 600px;
+  font-size: 20px;
+  color: rgba($color-white, 0.9);
+  max-width: 670px;
   margin: 0 auto;
   line-height: 1.7;
 }
 @media (max-width: $breakpoint-mobile) {
+
+  .sectionContainer{
+    padding-top: 1.5rem;
+  }
   .sectionHeader {
     margin-bottom: $spacing-xl;
+    padding-top: 2rem;
+    height: 337px;
   }
-  .sectionTitle {
-    font-size: $font-size-xl;
+  .sectionDescription{
+    font-size: 19px;
+    padding-bottom: 2rem;
   }
-  .sectionDescription {
-    font-size: $font-size-sm;
+  .sectionSpanner {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
 }

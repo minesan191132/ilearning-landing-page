@@ -16,8 +16,8 @@
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 45px;
-  margin-top: 45px;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
 
   &:first-child {
     margin-top: 0;
@@ -26,14 +26,13 @@
 
 .subTitle {
   display: block;
-  font-size: 14px;
+  font-size: 23px;
   color: #fff;
-  margin-bottom: 6px;
   font-weight: 400;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 700;
   color: #fff;
 }
@@ -41,36 +40,39 @@
 .testimonialGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 80px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  height: 539px;
+  margin: 0 auto 80px auto;
 }
 
 .testimonialCard {
-  background-color: #15181c;
+  background-color: rgba(9, 12, 15, 1);
   border-radius: 8px;
   padding: 40px 32px;
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
-  transition: border-color 0.2s ease;
-  
-  &:hover {
-    border-color: #15cca3;
-  }
 }
 
 .quoteIcon {
-  margin-bottom: 24px;
+  font-size: 100px;
+  line-height: 150%;
+  font-weight: 700;
+  color: rgba(174, 174, 174, 1);
 }
 
 .quoteIconWhite {
-  margin-bottom: 24px;
+  font-size: 80px;
+  max-height: 100px;
 }
 
 .testimonialText {
-  font-size: 13px;
+  font-size: 20px;
+  text-indent: 1rem;
   line-height: 1.6;
-  color: #a0aab2;
+  color: rgba(174, 174, 174, 1);
   flex-grow: 1;
   margin-bottom: 40px;
 }
@@ -82,10 +84,10 @@
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 79px;
+  height: 79px;
   border-radius: 50%;
-  background-color: #2a2e33;
+  background-color: rgba(32, 36, 40, 1);
   flex-shrink: 0;
 }
 
@@ -95,51 +97,53 @@
 }
 
 .authorName {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 600;
-  color: #fff;
+  color: rgba(174, 174, 174, 1);
   margin-bottom: 4px;
 }
 
 .authorLocation {
-  font-size: 11px;
+  font-size: 18px;
   color: #6c757d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .instructorCard {
-  background-color: #0d0f12;
+  background-color: rgba(9, 12, 15, 1);
   border-radius: 12px;
   display: flex;
   overflow: hidden;
   margin: 0 auto;
   margin-top: 80px;
-  min-height: 440px;
+  width: 1479px;
+  min-height: 748px;
 }
 
 .instructorImage {
   width: 35%;
-  background-color: #24272a;
+  background-color: rgba(32, 36, 40, 1);
   flex-shrink: 0;
   padding : 8px;
-  margin: 55px;
-  margin-left: 70px;
+  margin: 120px;
+  margin-left: 100px;
+  border-radius: 10px;
   margin-right: 40px;
 
 }
 
 .instructorContent {
-  padding: 48px;
+  padding: 80px 48px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .instructorQuote {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.7;
-  color: #a0aab2;
+  color: rgba(174, 174, 174, 1);
   margin-bottom: 16px;
   
   &:last-of-type {
@@ -152,34 +156,35 @@
 }
 
 .instructorName {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 700;
-  color: #fff;
+  color: rgba(174, 174, 174, 1);
   margin-bottom: 6px;
 }
 
 .instructorTitle {
-  font-size: 14px;
-  color: #6c757d;
+  font-size: 30px;
+  color: rgba(174, 174, 174, 1);
 }
 
 .carouselControls {
   margin-top: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .dots {
   display: flex;
-  gap: 8px;
+  gap: 16px;
+  transform: translateY(60px);
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background-color: #3b4148;
+  background-color: $color-white;
   cursor: pointer;
   transition: background-color 0.2s ease;
   
@@ -190,14 +195,14 @@
 
 .arrows {
   display: flex;
-  gap: 12px;
+  gap: 30px;
 }
 
 .arrowBtn {
-  width: 36px;
-  height: 36px;
+  width: 47px;
+  height: 47px;
   border-radius: 8px;
-  border: 1px solid #3b4148;
+  border: 2px solid $color-white;
   background: transparent;
   color: #a0aab2;
   display: flex;
@@ -209,6 +214,7 @@
   &.arrowBtnActive, &:hover {
     background-color: #15cca3;
     border-color: #15cca3;
+    border: 2px solid $color-white;
     color: #fff;
   }
 }
@@ -220,14 +226,13 @@
   
   .subTitle {
     display: block;
-    font-size: 14px;
+    font-size: 23px;
     color: #fff;
-    margin-bottom: 6px;
     font-weight: 400;
   }
   
   .title {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 700;
     color: #fff;
   }
@@ -253,8 +258,9 @@
   background-color: #0d0f12;
   border-radius: 12px;
   padding: 40px 32px;
-  max-width: 1000px;
-  margin: 40px auto 0;
+  max-width: 1700px;
+  height: 255px;
+  margin: 50px auto 0;
 }
 
 .partnersLogos {
@@ -265,9 +271,9 @@
   padding: 0 40px;
   
   img {
-    height: 40px;
+    height: 70px;
     object-fit: contain;
-    max-width: 140px;
+    max-width: 300px;
   }
 }
 
@@ -317,16 +323,17 @@
 .ctaWrapper {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
 }
 
 .enrollBtn {
   background-color: #15cca3;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 600;
-  padding: 14px 32px;
-  border-radius: 8px;
+  padding: 20px 60px;
+  border-radius: 20px;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;

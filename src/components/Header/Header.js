@@ -55,7 +55,7 @@ const Header = () => {
                 <div className={styles.leftSection}>
                     <a href="/" className={styles.logo}>
                         <div className={styles.logoIcon}>
-                            <svg width="120" height="53 " viewBox="0 0 165 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="165" height="53 " viewBox="0 0 165 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_901_908)">
                                     <path d="M59.1826 40.7188L56.3283 35.7732L56.3306 35.7709C56.0709 35.3319 55.9192 34.8217 55.9192 34.2748C55.9192 33.7232 56.0732 33.2107 56.3375 32.7695L55.8687 32.581L55.0413 33.5394L54.8092 33.1372C53.8831 31.5308 51.5642 31.5308 50.6381 33.1372L46.2624 40.7165C45.3362 42.3229 46.4945 44.3292 48.3468 44.3292H48.8662L48.4778 45.6644L48.8065 45.8138C49.312 44.9267 50.2658 44.3292 51.3597 44.3292C51.3758 44.3292 51.3896 44.3315 51.4057 44.3315V44.3292H57.0982C58.9505 44.3292 60.1088 42.3229 59.1826 40.7188Z" fill="#15CCA3" />
                                     <path d="M40.0144 0H18.6967C15.824 0 13.1719 1.53287 11.7356 4.01947L1.07677 22.4805C-0.359575 24.9671 -0.359575 28.0306 1.07677 30.5195L11.7356 48.9805C13.1719 51.4671 15.824 53 18.6967 53H40.0144C42.8871 53 45.5391 51.4671 46.9755 48.9805L57.6343 30.5195C59.0707 28.0329 59.0707 24.9694 57.6343 22.4805L46.9755 4.01947C45.5391 1.53287 42.8848 0 40.0144 0Z" fill="#15CCA3" />
@@ -75,7 +75,7 @@ const Header = () => {
                     </a>
 
                     <div className={styles.searchBar}>
-                        <svg className={styles.searchIcon} width="16" height="16" viewBox="0 0 20 20" fill="none">
+                        <svg className={styles.searchIcon} width="23" height="23" viewBox="0 0 23 23" fill="none">
                             <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         <input

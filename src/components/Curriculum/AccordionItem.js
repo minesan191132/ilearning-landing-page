@@ -12,11 +12,11 @@ const AccordionItem = ({ item, isOpen, onToggle }) => {
           <span className={styles.accordionDuration}>{item.duration}</span>
           <div className={styles.accordionIcon}>
             {isOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="5" y1="12" x2="19" y2="12" strokeWidth="1" />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="12" y1="5" x2="12" y2="19" strokeWidth="1" />
                 <line x1="5" y1="12" x2="19" y2="12" strokeWidth="1" />
               </svg>
